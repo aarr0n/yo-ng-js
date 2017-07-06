@@ -1,11 +1,13 @@
 ![](https://media.giphy.com/media/woOxBpJ5FcndK/giphy.gif)
 
-# yo-ng-js
-Yeoman Generator for AngularJs
+Yeoman Generator for AngularJs. Create either a component, directive, controller, service or a filter.
 
-# Examples
+# Useage
 
-Create either a component, directive, controller, service or a filter.
+```
+npm install -g yo generator-yo-ng-js
+```
+
 
 ```
 yo yo-ng-js
