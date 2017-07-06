@@ -1,6 +1,6 @@
 {
   "name": "generator-yo-ng-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Yeoman ES6 generator for AngularJs",
   "main": "app/index.js",
   "author": "Aarron Painter",
