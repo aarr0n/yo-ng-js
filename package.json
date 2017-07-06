@@ -1,5 +1,5 @@
 {
-  "name": "generator-ng-js",
+  "name": "yo-ng-js",
   "version": "1.0.0",
   "description": "Yeoman ES6 generator for AngularJs",
   "main": "app/index.js",
