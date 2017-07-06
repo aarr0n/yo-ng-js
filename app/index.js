@@ -30,26 +30,81 @@ module.exports = class extends Generator {
    * @method prompting
    */
   prompting () {
-    this._showQuestions().then(answers => this._evaluateAnswers(answers))
+    const requestedOptions = this._getRequestedOptions()
+
+    if (!this._hasValidOptions(requestedOptions)) {
+      return
+    }
+
+    this._showQuestions(requestedOptions).then(answers =>
+      this._evaluateAnswers(answers)
+    )
   }
 
+  /**
+   * Validates the provided options.
+   *
+   * @private
+   * @method _hasValidOptions
+   *
+   * @param {Object} requestedOptions
+   *
+   * @return {Boolean} True if the options are valid, false otherwise.
+   */
+  _hasValidOptions (requestedOptions) {
+    if (
+      requestedOptions.choice &&
+      !find(CHOICES, { value: requestedOptions.choice })
+    ) {
+      this.log(`😭  I don’t know about "${requestedOptions.choice}".`)
+      return false
+    }
+
+    return true
+  }
+
+  /**
+   * Get the requested options that may of been passed as arguments.
+   *
+   * @private
+   * @method _getRequestedOptions
+   *
+   * @return {Object} The requested options.
+   */
+  _getRequestedOptions () {
+    return {
+      choice: this.arguments[0],
+      name: this.arguments[1]
+    }
+  }
   /**
    * Show the required questions.
    *
    * @private
    * @method _showQuestions
    *
-   * @return {Array} Prompts
+   * @param {Object} requestedOptions
+   *        Answers to questions provided by arguments.
+   *
+   *        @param {String} [requestedOptions.choice]
+   *               What to create
+   *
+   *        @param {String} [requestedOptions.name]
+   *               The name of the item to be created.
+   *
+   * @return {Array} Prompts.
    */
-  _showQuestions () {
-    return this.prompt([
+  _showQuestions (requestedOptions) {
+    const questions = [
       {
+        when: () => !requestedOptions.choice,
         type: 'list',
         name: 'choice',
         message: 'Generate?',
         choices: CHOICES
       },
       {
+        when: () => !requestedOptions.name,
         type: 'input',
         name: 'name',
         message: 'Name?'
@@ -67,7 +122,11 @@ module.exports = class extends Generator {
         message: 'Angular App Name?',
         store: true
       }
-    ])
+    ]
+
+    return this.prompt(questions).then(answers =>
+      Object.assign({}, requestedOptions, answers)
+    )
   }
 
   /**
@@ -113,7 +172,9 @@ module.exports = class extends Generator {
       templates = templates.concat('module')
     }
 
-    templates.forEach(template => this._generateFile(template, data, `./${fsName}`))
+    templates.forEach(template =>
+      this._generateFile(template, data, `./${fsName}`)
+    )
   }
 
   /**
