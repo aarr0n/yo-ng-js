@@ -5,14 +5,20 @@ Yeoman Generator for AngularJs
 
 # Examples
 
+Create either a component, directive, controller, service or a filter.
+
 ```
 yo yo-ng-js
-
-yo yo-ng-js component
-
-yo yo-ng-js component my-component-name
-
 ```
 
-# To do
-- [ ] Add yeoman checkbox options when creating directives and components; things like transclude, bindings etc.
+Pass your choice as the first argument
+
+```
+yo yo-ng-js component
+```
+
+Pass the name of your choice as the second argument
+
+```
+yo yo-ng-js component my-component-name
+```
