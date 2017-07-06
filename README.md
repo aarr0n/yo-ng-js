@@ -1,3 +1,5 @@
+![](https://media.giphy.com/media/woOxBpJ5FcndK/giphy.gif)
+
 # yo-ng-js
 Yeoman Generator for AngularJs
 
