@@ -64,7 +64,7 @@ module.exports = class extends Generator {
   }
 
   /**
-   * Get the requested options that are may of been passed as arguments.
+   * Get the requested options that may of been passed as arguments.
    *
    * @private
    * @method _getRequestedOptions
