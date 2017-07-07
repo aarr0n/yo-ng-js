@@ -9,7 +9,7 @@ You'll get prompted:
 - Whether an Angular module should also be generated
 - The name of the Angular application (to be used with the module)
 
-# Components and Directives
+# Generating Components and Directives
 
 Components and directives will generate an associated controller and template.
 
