@@ -1,6 +1,6 @@
 {
   "name": "generator-yo-ng-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Yeoman ES6 generator for AngularJs. Generate components, directives, controllers, services or filters.",
   "main": "app/index.js",
   "author": "Aarron Painter",
