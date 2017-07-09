@@ -46,3 +46,19 @@ Pass the name of your choice as the second argument.
 ```
 yo yo-ng-js component my-component-name
 ```
+
+## Create an Alias
+
+Add the following to your `/.bash_aliases`.
+
+```
+ng() {
+  yo yo-ng-js "$1" "$2"
+}
+```
+
+Then you can just run
+
+```
+ng component my-component-name
+```
