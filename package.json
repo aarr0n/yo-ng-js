@@ -11,7 +11,7 @@
     "es6"
   ],
   "scripts": {
-    "create-angular": "yo yo-ng-js"
+    "ng": "yo yo-ng-js"
   },
   "repository": {
     "type": "git",

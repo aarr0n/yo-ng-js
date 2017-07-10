@@ -1,8 +1,11 @@
 ![](https://media.giphy.com/media/woOxBpJ5FcndK/giphy.gif)
 
+![node-version](https://img.shields.io/node/v/generator-yo-ng-js.svg)
+![dependencies](https://david-dm.org/aarr0n/yo-ng-js.svg)
+
 Yeoman Generator for AngularJs. Generate either a component, directive, controller, service or a filter.
 
-You'll get prompted:
+You'll get prompted for the following:
 
 - What you want to generate; controller, component etc
 - It's name
