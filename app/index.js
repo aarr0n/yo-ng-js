@@ -1,6 +1,7 @@
 const changeCase = require('change-case')
 const Generator = require('yeoman-generator')
 const fs = require('fs')
+const path = require('path')
 const find = require('lodash.find')
 
 const CHOICES = [
@@ -162,19 +163,13 @@ module.exports = class extends Generator {
     }
 
     const fsName = data.name.lower
-
-    if (!fs.existsSync(fsName)) {
-      fs.mkdirSync(fsName)
-    }
-
     let templates = find(CHOICES, { value: choice }).templates
+
     if (addModule) {
       templates = templates.concat('module')
     }
 
-    templates.forEach(template =>
-      this._generateFile(template, data, `./${fsName}`)
-    )
+    templates.forEach(template => this._generateFile(template, data, fsName))
   }
 
   /**
@@ -189,13 +184,18 @@ module.exports = class extends Generator {
    * @param {Object} data
    *        Data to pass to the template
    *
-   * @param {String} path
-   *        The path for the created item
+   * @param {String} name
+   *        The filename
    */
-  _generateFile (template, data, path = './') {
+  _generateFile (template, data, name) {
     const ext = template === 'view' ? 'html' : 'js'
     const templateFilename = `${template}.${ext}`
-    let dest = `${path}/${data.name.lower}`
+    let dest = `${data.name.lower}`
+
+    // If we're already in a folder with the same name
+    if (path.basename(process.cwd()) !== name) {
+      dest = `./${name}/${dest}`
+    }
 
     if (template !== 'module' && template !== 'view') {
       dest = `${dest}.${templateFilename}`
