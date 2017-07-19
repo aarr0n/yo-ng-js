@@ -187,7 +187,7 @@ module.exports = class extends Generator {
     const templateFilename = `${template}.${ext}`
     let dest = `${data.name.lower}`
 
-    // If we're already in a folder with the same name
+    // Check that we're not already in a folder with the same name
     if (path.basename(process.cwd()) !== name) {
       dest = `./${name}/${dest}`
     }
