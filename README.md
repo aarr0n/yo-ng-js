@@ -11,8 +11,7 @@ You'll get prompted with the follow questions; you can skip the first two questi
 
 - What you want to generate; controller, component etc
 - It's name
-- Whether an Angular module should also be generated
-- The name of the Angular module
+- The name of the Angular module to associate with your choice (if you don't supply a name, a module file will not be created)
 
 # Install
 
