@@ -1,6 +1,5 @@
 const changeCase = require('change-case')
 const Generator = require('yeoman-generator')
-const fs = require('fs')
 const path = require('path')
 const find = require('lodash.find')
 
@@ -21,10 +20,6 @@ const CHOICES = [
 ]
 
 module.exports = class extends Generator {
-  constructor (args, opts) {
-    super(args, opts)
-  }
-
   /**
    * Yeoman prompting.
    *
