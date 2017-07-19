@@ -106,17 +106,9 @@ module.exports = class extends Generator {
         message: 'Name?'
       },
       {
-        type: 'confirm',
-        name: 'addModule',
-        message: 'Add Module?',
-        default: true
-      },
-      {
-        when: ({ addModule }) => addModule,
         type: 'input',
-        name: 'appName',
-        message: 'Angular App Name?',
-        store: true
+        name: 'moduleName',
+        message: 'Module name (if you just hit return, I wont create a module file)?'
       }
     ]
 
@@ -139,13 +131,10 @@ module.exports = class extends Generator {
    *        @param {String} name
    *               The name to give the chosen item.
    *
-   *        @param {Boolean} addModule
-   *               Whether or not to add an Angular module.
-   *
-   *        @param {String} [appName]
-   *              The Angular application name to use with the Angular module
+   *        @param {String} [moduleName]
+   *              The module name to use when creating a module.
    */
-  _evaluateAnswers ({ choice, name, addModule, appName }) {
+  _evaluateAnswers ({ choice, name, moduleName }) {
     const data = {
       name: {
         pascal: changeCase.pascalCase(name),
@@ -154,13 +143,13 @@ module.exports = class extends Generator {
         camel: changeCase.camel(name)
       },
       choice,
-      appName
+      moduleName
     }
 
     const fsName = data.name.lower
     let templates = find(CHOICES, { value: choice }).templates
 
-    if (addModule) {
+    if (moduleName) {
       templates = templates.concat('module')
     }
 

@@ -1,5 +1,5 @@
 import <%= name.pascal %> from './<%= name.lower %>.<%= choice %>'
 
 angular
-  .module('<%= appName %>')
+  .module('<%= moduleName %>')
   .<%= choice %>('<%= name.camel %>', <%= name.pascal %>)
