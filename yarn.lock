@@ -161,8 +161,8 @@ chalk@^2.3.0:
     supports-color "^5.2.0"
 
 change-case@~3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/change-case/-/change-case-3.0.1.tgz#ee5f5ad0415ad1ad9e8072cf49cd4cfa7660a554"
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/change-case/-/change-case-3.0.2.tgz#fd48746cce02f03f0a672577d1d3a8dc2eceb037"
   dependencies:
     camel-case "^3.0.0"
     constant-case "^2.0.0"
@@ -172,7 +172,7 @@ change-case@~3.0.0:
     is-upper-case "^1.1.0"
     lower-case "^1.1.1"
     lower-case-first "^1.0.0"
-    no-case "^2.2.0"
+    no-case "^2.3.2"
     param-case "^2.1.0"
     pascal-case "^2.0.0"
     path-case "^2.1.0"
@@ -1262,7 +1262,7 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
-no-case@^2.2.0:
+no-case@^2.2.0, no-case@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
   dependencies:
@@ -1624,11 +1624,7 @@ scoped-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/scoped-regex/-/scoped-regex-1.0.0.tgz#a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8"
 
-"semver@2 || 3 || 4 || 5":
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
-
-semver@5.3.0:
+"semver@2 || 3 || 4 || 5", semver@5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
